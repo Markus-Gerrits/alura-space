@@ -47,8 +47,8 @@ blockquote, q {
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
-    content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -115,6 +115,15 @@ table {
     cursor: pointer;
     width: 2rem;
     height: 2rem;
+}
+
+.buscar__button {
+    background: transparent;
+    border: none;
+}
+
+.buscar__form {
+    display: flex;
 }
 
 .cards {
