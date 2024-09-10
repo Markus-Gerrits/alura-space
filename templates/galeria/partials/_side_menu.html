@@ -1,9 +1,30 @@
 {% load static %}
 <section class="menu-lateral">
     <nav class="menu-lateral__navegacao">
-        <a href="{% url 'index' %}"><img src="{% static '/assets/ícones/1x/Home - ativo.png' %}"> Home</a>
-        <a href="#"><img src="{% static '/assets/ícones/1x/Mais vistas - inativo.png' %}"> Mais vistas</a>
-        <a href="#"><img src="{% static '/assets/ícones/1x/Novas - inativo.png' %}"> Novas</a>
+        <a href="{% url 'index' %}" class="{% if request.resolver_match.url_name == 'index' %}menu-lateral__navegacao-ativo{% endif %}">
+            <img src="
+                {% if request.resolver_match.url_name == 'index' %}
+                    {% static 'assets/ícones/1x/Home - ativo.png' %}
+                {% else %}
+                    {% static 'assets/ícones/1x/Home - inativo.png' %}
+                {% endif %}" alt="Home"> Home
+        </a>
+        <a href="{% url 'login' %}" class="{% if request.resolver_match.url_name == 'login' %}menu-lateral__navegacao-ativo{% endif %}">
+            <img src="
+                {% if request.resolver_match.url_name == 'login' %}
+                    {% static '/assets/ícones/1x/Mais vistas - ativo.png' %}
+                {% else %}
+                    {% static '/assets/ícones/1x/Mais vistas - inativo.png' %}
+                {% endif %}"> Login
+        </a>
+        <a href="{% url 'cadastro' %}" class="{% if request.resolver_match.url_name == 'cadastro' %}menu-lateral__navegacao-ativo{% endif %}">
+            <img src="
+                {% if request.resolver_match.url_name == 'cadastro' %}
+                    {% static '/assets/ícones/1x/Novas - ativo.png' %}
+                {% else %}
+                    {% static '/assets/ícones/1x/Novas - inativo.png' %}
+                {% endif %}"> Cadastro
+        </a>
         <a href="#"><img src="{% static '/assets/ícones/1x/Surpreenda-me - inativo.png' %}"> Surpreenda-me</a>
     </nav>
 </section>

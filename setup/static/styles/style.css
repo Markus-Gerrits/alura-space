@@ -274,7 +274,7 @@ table {
     font-size: 24px;
 }
 
-.menu-lateral__navegacao a:first-child {
+.menu-lateral__navegacao-ativo {
     font-weight: bold;
     color: #7B78E5;
 }
